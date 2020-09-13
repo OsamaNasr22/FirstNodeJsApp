@@ -1,12 +1,23 @@
-<div class="row">
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <img src="https://i1.sndcdn.com/artworks-000247384439-0efczv-t500x500.jpg" alt="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.">
-            <div class="caption clearfix">
-                <h3>Thumbnail label</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <span class="pull-left">20$</span>
-                <p> <a href="#" class="btn btn-success pull-right" role="button">Button</a></p>
+
+            <div class="row">
+    {{#each products}}
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="{{this.image}}" alt="Lorem Ipsum is simpl  y dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.">
+                <div class="caption clearfix">
+                    <h3>{{this.title}}</h3>
+                    <p>{{this.description}}</p>
+                    <span class="pull-left">{{this.price}} $</span>
+                    <p> <a href="#" class="btn btn-success pull-right" role="button">Button</a></p>
+                </div>
             </div>
         </div>
-    </div>
+        {{/each}}
+
+
+            </div>
+
+
+
+
+

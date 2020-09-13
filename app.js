@@ -6,7 +6,7 @@ var logger = require('morgan');
 var handlebars = require('express-handlebars');
 var mongoose = require('mongoose')
 
-mongoose.connect('localhost:27017/shopping')
+mongoose.connect('mongodb://localhost:27017/shopping',{ useNewUrlParser: true })
 
 
 var indexRouter = require('./routes/index');
