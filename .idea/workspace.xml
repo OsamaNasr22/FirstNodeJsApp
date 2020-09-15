@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c563ecdc-545f-4065-980a-dc0dfd671e05" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/user/login.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/user/profile.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/user/register.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/shop/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/shop/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +28,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../frontend-master/api-design-node-v3" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -43,7 +48,7 @@
       <updated>1599142742708</updated>
       <workItem from="1599142744425" duration="8888000" />
       <workItem from="1599525637651" duration="4678000" />
-      <workItem from="1600016054912" duration="654000" />
+      <workItem from="1600016054912" duration="3287000" />
     </task>
     <servers />
   </component>
@@ -55,9 +60,13 @@
       <screen x="72" y="27" width="1294" height="741" />
     </state>
     <state x="452" y="146" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.27.1294.741@72.27.1294.741" timestamp="1599157543122" />
-    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1599157331480">
+    <state x="502" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1600019698882">
       <screen x="72" y="27" width="1294" height="741" />
     </state>
-    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup/72.27.1294.741@72.27.1294.741" timestamp="1599157331480" />
+    <state x="502" y="155" width="424" height="491" key="FileChooserDialogImpl/72.27.1294.741@72.27.1294.741" timestamp="1600019698882" />
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1600021484412">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup/72.27.1294.741@72.27.1294.741" timestamp="1600021484412" />
   </component>
 </project>
