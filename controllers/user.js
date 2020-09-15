@@ -1,6 +1,7 @@
 
 var getRegisterPage = (req,res) =>{
-    res.render('./user/register', {csrfToken: req.csrfToken() })
+    var messages = req.flash('error');
+    res.render('./user/register', {csrfToken: req.csrfToken(), hasError: messages.length > 0, messages: messages  })
 
 }
 
@@ -8,4 +9,8 @@ var register = (req,res) => {
     res.redirect('/')
 }
 
-module.exports = {getRegisterPage, register};
+var getProfile = (req,res) =>{
+    res.render('./user/profile')
+}
+
+module.exports = {getRegisterPage, register, getProfile};

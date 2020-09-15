@@ -1,5 +1,12 @@
 <div class="row">
     <div class="col-lg-4 offset-lg-4">
+        {{#if hasError}}
+        <div class="alert alert-danger">
+            {{#each messages}}
+                <p>{{this}}</p>
+            {{/each}}
+        </div>
+        {{/if}}
         <form action="/user/register" method="POST">
             <div class="form-group">
                 <label for="email">Email</label>
