@@ -28,7 +28,20 @@ passport.use('local.signup', new LocalStrategy({
             newUser.save().then((user) => done(null, user))
                 .catch((error) => done(error));
     });
+}))
 
+passport.use('local.login', new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true
+},    (req,email,password,done)=>{
 
-
+  User.findOne({email: email}).exec()
+      .then(async (user)=> {
+          var check = await user.checkIfPasswordIsValid(password);
+          console.log(check)
+          if (!user || !check) return done(null, false, {message: "Invalid credentials"})
+          return done(null, user);
+      })
+      .catch((error) => done(error))
 }))

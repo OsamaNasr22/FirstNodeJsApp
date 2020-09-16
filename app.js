@@ -8,11 +8,8 @@ var mongoose = require('mongoose')
 var session = require('express-session')
 var passport = require('passport');
 var flash = require('connect-flash')
-var userRouter = require('./routes/user')
 mongoose.connect('mongodb://localhost:27017/shopping',{ useNewUrlParser: true })
 require('./config/passport')
-
-var indexRouter = require('./routes/index');
 
 var app = express();
 
@@ -31,8 +28,9 @@ app.use(passport.session())
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', indexRouter);
-app.use('/user',userRouter)
+app.use('/', require('./routes/index'));
+app.use('/user',require('./routes/user'))
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -13,4 +13,10 @@ var getProfile = (req,res) =>{
     res.render('./user/profile')
 }
 
-module.exports = {getRegisterPage, register, getProfile};
+var getLoginPage = (req, res) => {
+    var messages = req.flash('error');
+    res.render('./user/login', {csrfToken: req.csrfToken(), hasError: messages.length > 0, messages: messages  })
+}
+
+
+module.exports = {getRegisterPage, register, getProfile, getLoginPage};
