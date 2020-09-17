@@ -21,6 +21,13 @@ var addItemToCart = (req, res, next) => {
 
 }
 
+var getCart = (req, res) => {
+    var oldCart = req.session.cart;
+    if (!oldCart) return  res.render('./shop/cart',{products: null})
+
+    var cart = new Cart(oldCart)
+    return res.render('./shop/cart',{products: cart.serializeToArray(), totalPrice: cart.totalPrice})
+}
 
 
-module.exports = {addItemToCart}
+module.exports = {addItemToCart, getCart}
