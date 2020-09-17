@@ -11,7 +11,6 @@ var signUpRules = () =>{
         body('password', 'Password is invalid').notEmpty().bail().isLength({min:8}).bail()
     ];
 }
-
 var signUpValidation = (req, res, next) => {
 var errors = validationResult(req);
 if (errors.isEmpty()) return next();
@@ -23,10 +22,30 @@ res.redirect(`/user${req.url}`)
 
 }
 
+
+var isAuthenticated = (req,res,next) =>{
+    if (req.isAuthenticated()) return  next();
+    res.redirect('/user/login')
+}
+
+
+
+var isAlreadyLoggedIn = (req, res, next) => {
+    if (!req.isAuthenticated()) return  next();
+    res.redirect('/');
+}
+router.get('/profile', isAuthenticated, userController.getProfile);
+router.get('/logout',isAuthenticated , (req,res) => {
+    req.logout();
+    res.redirect('/')
+})
+
+    router.use('/', isAlreadyLoggedIn , (req, res, next) => {
+    return next();
+});
+
 router.get('/register', [
-    csrfProtection,
-    body('email').notEmpty().isEmail(),
-    body('password').notEmpty().isLength({min:8})
+    csrfProtection
 ],userController.getRegisterPage)
 
 router.post('/register',[csrfProtection, signUpRules(), signUpValidation] ,passport.authenticate('local.signup',{
@@ -35,8 +54,7 @@ router.post('/register',[csrfProtection, signUpRules(), signUpValidation] ,passp
     failureFlash: true
 }));
 
-router.get('/profile',userController.getProfile);
-router.get('/login',csrfProtection,userController.getLoginPage)
+router.get('/login', csrfProtection, userController.getLoginPage);
 
 router.post('/login',[csrfProtection,signUpRules(), signUpValidation],passport.authenticate('local.login',{
     successRedirect: "/user/profile",

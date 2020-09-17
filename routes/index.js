@@ -11,6 +11,7 @@ router.get('/',  async function(req, res, next) {
   //   chucnksProducts.push(products.slice(i , i + chunk))
   // }
   // console.log(chucnksProducts)
+  console.log(req.isAuthenticated());
   res.render('shop/index', { title: 'Express',products: products });
 });
 
