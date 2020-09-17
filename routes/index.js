@@ -4,6 +4,7 @@ var product = require('../models/product');
 /* GET home page. */
 router.get('/',  async function(req, res, next) {
   var products = await product.find().lean().exec();
+
   // var chucnksProducts = [];
   //
   // var chunk =3;
@@ -11,7 +12,6 @@ router.get('/',  async function(req, res, next) {
   //   chucnksProducts.push(products.slice(i , i + chunk))
   // }
   // console.log(chucnksProducts)
-  console.log(req.isAuthenticated());
   res.render('shop/index', { title: 'Express',products: products });
 });
 
